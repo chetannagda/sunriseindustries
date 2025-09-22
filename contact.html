@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Get in Touch | Sunrise Group of Industries</title>
+    <meta name="description" content="Contact Sunrise Group of Industries for premium stone and mineral powder solutions. Get quotes, technical support, and expert consultation for your industrial needs.">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Sunrise Group of Industries</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team of experts for personalized solutions, technical support, and competitive quotations for all your stone and mineral powder requirements.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-2">
+                <!-- Contact Information -->
+                <div>
+                    <h2>Get in Touch</h2>
+                    <p>We're here to help you find the perfect stone and mineral powder solutions for your industrial applications. Our experienced team is ready to assist you with technical guidance, custom specifications, and competitive pricing.</p>
+                    
+                    <div class="contact-info mt-2">
+                        <div class="contact-item">
+                            <h3>📧 Email Us</h3>
+                            <p><strong>General Inquiries:</strong> info@sunrisegroupofindustries.com</p>
+                            <p><strong>Sales Team:</strong> sales@sunrisegroupofindustries.com</p>
+                            <p><strong>Technical Support:</strong> technical@sunrisegroupofindustries.com</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>📞 Call Us</h3>
+                            <p><strong>Main Office:</strong> +91 1234567890</p>
+                            <p><strong>Sales Direct:</strong> +91 9876543210</p>
+                            <p><strong>Technical Support:</strong> +91 8765432109</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>🏢 Visit Our Office</h3>
+                            <p><strong>Head Office:</strong></p>
+                            <p>Sunrise Group of Industries<br>
+                            Industrial Complex, Sector 5<br>
+                            Manufacturing District<br>
+                            City - 123456, State<br>
+                            India</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>⏰ Business Hours</h3>
+                            <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                            <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
+                            <p><strong>Sunday:</strong> Closed</p>
+                            <p><strong>Emergency Support:</strong> Available 24/7</p>
+                        </div>
+                    </div>
+                    
+                    <div class="whatsapp-contact mt-2">
+                        <h3>💬 WhatsApp Business</h3>
+                        <p>For quick inquiries and instant support, chat with us on WhatsApp:</p>
+                        <a href="#" class="btn btn-secondary whatsapp-contact-btn" onclick="openWhatsApp()">
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card">
+                    <h3>Send us a Message</h3>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="industry">Industry/Application</label>
+                            <select id="industry" name="industry">
+                                <option value="">Select Industry</option>
+                                <option value="construction">Construction & Building</option>
+                                <option value="paint-coatings">Paint & Coatings</option>
+                                <option value="ceramics">Ceramics & Tiles</option>
+                                <option value="glass">Glass Industry</option>
+                                <option value="paper">Paper & Pulp</option>
+                                <option value="pharmaceuticals">Pharmaceuticals</option>
+                                <option value="plastics">Plastics & Rubber</option>
+                                <option value="cosmetics">Cosmetics</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-interest">Product Interest</label>
+                            <select id="product-interest" name="product-interest">
+                                <option value="">Select Product</option>
+                                <option value="limestone-powder">Limestone Powder</option>
+                                <option value="marble-powder">Marble Powder</option>
+                                <option value="quartz-powder">Quartz Powder</option>
+                                <option value="dolomite-powder">Dolomite Powder</option>
+                                <option value="calcite-powder">Calcite Powder</option>
+                                <option value="talc-powder">Talc Powder</option>
+                                <option value="custom-solution">Custom Solution Required</option>
+                                <option value="multiple-products">Multiple Products</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quantity">Expected Quantity (Optional)</label>
+                            <input type="text" id="quantity" name="quantity" placeholder="e.g., 10 tonnes per month">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Please describe your requirements, specifications, or any questions you have..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Contact Options -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center">
+                <h2>Multiple Ways to Connect</h2>
+                <p>Choose the communication method that works best for you</p>
+            </div>
+            
+            <div class="grid-3 mt-2">
+                <div class="card">
+                    <h3>🎯 Request a Quote</h3>
+                    <p>Need pricing information? Send us your detailed requirements and get a competitive quote within 24 hours.</p>
+                    <a href="#contact-form" class="btn btn-secondary">Get Quote</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🔧 Technical Consultation</h3>
+                    <p>Speak with our mineral processing experts about custom specifications and application-specific solutions.</p>
+                    <a href="tel:+911234567890" class="btn btn-secondary">Call Expert</a>
+                </div>
+                
+                <div class="card">
+                    <h3>📋 Product Samples</h3>
+                    <p>Request free samples of our powder products for testing and evaluation in your specific applications.</p>
+                    <a href="#contact-form" class="btn btn-secondary">Request Samples</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center">
+                <h2>Our Service Areas</h2>
+                <p>We serve customers across multiple regions with reliable supply and logistics</p>
+            </div>
+            
+            <div class="grid-2 mt-2">
+                <div class="card">
+                    <h3>🌍 Domestic Market</h3>
+                    <ul>
+                        <li>All major industrial cities in India</li>
+                        <li>Direct supply to manufacturing hubs</li>
+                        <li>Regional distribution centers</li>
+                        <li>Local technical support teams</li>
+                        <li>Same-day dispatch for urgent requirements</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>🚢 International Export</h3>
+                    <ul>
+                        <li>Export to Southeast Asia, Middle East</li>
+                        <li>Container and bulk shipments</li>
+                        <li>Complete export documentation</li>
+                        <li>International quality certifications</li>
+                        <li>Flexible payment terms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about our products and services</p>
+            </div>
+            
+            <div class="grid-2 mt-2">
+                <div class="card">
+                    <h4>What are your minimum order quantities?</h4>
+                    <p>Minimum orders vary by product, typically starting from 1 tonne. We're flexible with trial orders and can accommodate smaller quantities for testing purposes.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Do you provide custom specifications?</h4>
+                    <p>Yes, we specialize in custom powder solutions. Our technical team can develop products to meet your specific particle size, purity, and performance requirements.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>What is your typical delivery time?</h4>
+                    <p>Standard products: 7-15 days from order confirmation. Custom products: 15-30 days depending on specifications. Express delivery available for urgent requirements.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Do you provide technical support?</h4>
+                    <p>Absolutely! Our experienced technical team provides application guidance, troubleshooting support, and optimization recommendations for your specific use cases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sunrise Group of Industries</h3>
+                    <p>Leading manufacturer of premium stone and mineral powders, serving industries worldwide with quality and precision.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="products.html">Products</a></p>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📧 info@sunrisegroupofindustries.com</p>
+                    <p>📞 +91 1234567890</p>
+                    <p>📍 Industrial Area, City, State</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <p>WhatsApp Business</p>
+                    <p>Technical Support</p>
+                    <p>Sales Team</p>
+                    <p>Customer Service</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>&copy; 2024 Sunrise Group of Industries. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="#" class="whatsapp-float" title="Chat with us on WhatsApp">
+        💬
+    </a>
+
+    <script src="js/main.js"></script>
+    
+    <style>
+        .contact-info {
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+        }
+        
+        .contact-item h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .whatsapp-contact {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .whatsapp-contact-btn {
+            margin-top: 1rem;
+            background-color: #25D366;
+            border-color: #25D366;
+        }
+        
+        .whatsapp-contact-btn:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+        }
+        
+        .contact-form {
+            margin-top: 1rem;
+        }
+        
+        .products-controls {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+        }
+    </style>
+</body>
+</html>
