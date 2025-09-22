@@ -342,44 +342,16 @@ function displayProducts(products, container) {
 function createProductCard(product) {
   const card = document.createElement('div');
   card.className = 'product-card';
+  card.onclick = () => openProductModal(product);
+  
   card.innerHTML = `
     <div class="product-image">
       <i class="product-icon">⚒️</i>
     </div>
     <div class="product-content">
       <h3>${product.name}</h3>
-      <p><strong>Raw Material:</strong> ${product.rawMaterial}</p>
-      <p>${product.description}</p>
-      
-      <div class="product-process">
-        <h4>Processing Steps:</h4>
-        <div class="process-flow">
-          ${createProcessFlow(product.process)}
-        </div>
-      </div>
-      
-      <div class="product-specs">
-        <div class="spec-item">
-          <strong>Fineness:</strong> ${product.fineness}
-        </div>
-        <div class="spec-item">
-          <strong>Purity:</strong> ${product.purity}
-        </div>
-        <div class="spec-item">
-          <strong>Color:</strong> ${product.color}
-        </div>
-      </div>
-      
-      <div class="product-applications">
-        <strong>Applications:</strong>
-        <ul>
-          ${product.applications.map(app => `<li>${app}</li>`).join('')}
-        </ul>
-      </div>
-      
-      <button class="btn btn-secondary" onclick="contactForProduct('${product.name}')">
-        Get Quote
-      </button>
+      <p class="product-subtitle">From ${product.rawMaterial}</p>
+      <p class="learn-more">Click to learn more</p>
     </div>
   `;
   
@@ -427,6 +399,122 @@ function setupProductFilter() {
       const container = document.getElementById('products-container');
       displayProducts(filteredProducts, container);
     });
+  }
+}
+
+// Product Modal functionality
+function openProductModal(product) {
+  // Create modal if it doesn't exist
+  let modal = document.getElementById('product-modal');
+  if (!modal) {
+    modal = createProductModal();
+    document.body.appendChild(modal);
+  }
+  
+  // Populate modal with product data
+  populateModal(product);
+  
+  // Show modal
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function createProductModal() {
+  const modal = document.createElement('div');
+  modal.id = 'product-modal';
+  modal.className = 'product-modal';
+  
+  modal.innerHTML = `
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-product-name"></h2>
+        <button class="modal-close" onclick="closeProductModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="product-images">
+          <div class="product-image-item">
+            <div>🪨</div>
+            <small>Raw Material</small>
+          </div>
+          <div class="product-image-item">
+            <div>💎</div>
+            <small>Crystal Form</small>
+          </div>
+          <div class="product-image-item">
+            <div>⚗️</div>
+            <small>Final Powder</small>
+          </div>
+        </div>
+        
+        <div id="modal-product-details"></div>
+        
+        <div class="text-center">
+          <button class="btn btn-primary" onclick="contactForProduct(document.getElementById('modal-product-name').textContent)">
+            Get Quote for this Product
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  // Close modal when clicking outside
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeProductModal();
+    }
+  });
+  
+  return modal;
+}
+
+function populateModal(product) {
+  document.getElementById('modal-product-name').textContent = product.name;
+  
+  const detailsContainer = document.getElementById('modal-product-details');
+  detailsContainer.innerHTML = `
+    <div class="grid-2">
+      <div>
+        <h4>Product Description</h4>
+        <p>${product.description}</p>
+        
+        <h4>Raw Material</h4>
+        <p>${product.rawMaterial}</p>
+        
+        <h4>Applications</h4>
+        <ul style="list-style: disc; padding-left: 1.5rem;">
+          ${product.applications.map(app => `<li>${app}</li>`).join('')}
+        </ul>
+      </div>
+      
+      <div>
+        <div class="product-process">
+          <h4>Processing Steps</h4>
+          <div class="process-flow">
+            ${createProcessFlow(product.process)}
+          </div>
+        </div>
+        
+        <div class="product-specs" style="margin-top: 1rem;">
+          <div class="spec-item">
+            <strong>Fineness</strong><br>${product.fineness}
+          </div>
+          <div class="spec-item">
+            <strong>Purity</strong><br>${product.purity}
+          </div>
+          <div class="spec-item">
+            <strong>Color</strong><br>${product.color}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function closeProductModal() {
+  const modal = document.getElementById('product-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
   }
 }
 
