@@ -664,6 +664,24 @@ footer {
   }
 }
 
+/* Process images (Our Processing Excellence) */
+.process-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .process-image { height: 160px; }
+}
+
+@media (max-width: 480px) {
+  .process-image { height: 140px; }
+}
+
 /* Loading States */
 .btn:disabled {
   opacity: 0.6;
