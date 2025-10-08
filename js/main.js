@@ -285,7 +285,7 @@ function initializeWhatsApp() {
 }
 
 function openWhatsApp() {
-  const phoneNumber = "1234567890"; // Replace with actual WhatsApp number
+  const phoneNumber = "7014592046"; // Replace with actual WhatsApp number
   const message = encodeURIComponent("Hello! I'm interested in learning more about Sunrise Group of Industries products.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
   window.open(whatsappUrl, '_blank');
@@ -521,7 +521,7 @@ function closeProductModal() {
 // Contact functionality
 function contactForProduct(productName) {
   const message = encodeURIComponent(`Hello! I'm interested in getting a quote for ${productName}.`);
-  const phoneNumber = "1234567890"; // Replace with actual WhatsApp number
+  const phoneNumber = "7014592046"; // Replace with actual WhatsApp number
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
   window.open(whatsappUrl, '_blank');
 }
@@ -549,7 +549,7 @@ function handleContactFormSubmission() {
     `New Contact Form Submission:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`
   );
   
-  const phoneNumber = "1234567890"; // Replace with actual WhatsApp number
+  const phoneNumber = "7014592046"; // Replace with actual WhatsApp number
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
   
   // Show success message

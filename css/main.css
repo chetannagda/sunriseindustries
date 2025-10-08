@@ -921,7 +921,33 @@ select:focus {
 /* Utility Classes */
 .text-center { text-align: center; }
 .text-white { color: var(--text-on-blue); }
-.bg-primary { background-color: var(--primary-blue); }
+.bg-primary {
+  background-image: url("../images/cta_image_index.svg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: var(--text-on-blue);
+}
+
+/* Add a subtle overlay for better text contrast on top of the SVG */
+.bg-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10,25,76,0.45); /* semi-transparent navy */
+  pointer-events: none;
+}
+
+/* Ensure inner content sits above overlay */
+.bg-primary > .container,
+.bg-primary .container * {
+  position: relative;
+  z-index: 1;
+}
 .bg-light { background-color: var(--light-gray); }
 .mb-0 { margin-bottom: 0; }
 .mt-2 { margin-top: calc(var(--spacing) * 2); }
