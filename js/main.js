@@ -4,14 +4,24 @@
 const productsData = [
   {
     id: 1,
-    name: "Limestone Powder",
-    rawMaterial: "Limestone Rocks",
-    description: "High-quality limestone powder processed from premium limestone rocks, ideal for construction and industrial applications.",
-    process: "Crushing → Grinding → Screening → Packaging",
-    applications: ["Cement Production", "Paint Industry", "Plastic Manufacturing", "Paper Industry"],
-    fineness: "200-325 mesh",
+    name: "Calcium Carbonate (CaCO3)",
+    rawMaterial: "Calcium Carbonate",
+    description: "Versatile calcium carbonate powder supplied in region-specific grades.",
+    process: "Crushing → Grinding → Classification → Packaging",
+    applications: ["Paper Industry", "Paints & Coatings", "Plastics", "Rubber"],
+    fineness: "200-400 mesh",
     purity: "98%",
-    color: "White to Off-White"
+    color: "White",
+      image: "images/powder_calcium_carbonate.jpeg",
+      rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+      crystalImage: "images/crystal_calcium_carbonate.png",
+      finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+      // Placeholder variants for Calcium Carbonate. Replace `image` and `name` with your exact files/names.
+      variants: [
+        { id: 'caco3-in', name: 'Indian CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' },
+        { id: 'caco3-eg', name: 'Egypt CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' },
+        { id: 'caco3-vn', name: 'Vietnam CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' }
+      ]
   },
   {
     id: 2,
@@ -346,7 +356,7 @@ function createProductCard(product) {
   
   card.innerHTML = `
     <div class="product-image">
-      <i class="product-icon">⚒️</i>
+      ${product.image ? `<img src="${product.image}" alt="${product.name}" class="product-thumb">` : '<i class="product-icon">⚒️</i>'}
     </div>
     <div class="product-content">
       <h3>${product.name}</h3>
@@ -487,6 +497,19 @@ function populateModal(product) {
       </div>
       
       <div>
+        ${product.variants ? `
+        <div class="product-variants">
+          <h4>Available Variants</h4>
+          <div class="variants-list">
+            ${product.variants.map(v => `
+              <div class="variant-item" data-variant-id="${v.id}">
+                <img src="${v.image}" alt="${v.name}" class="product-thumb-small">
+                <div class="variant-name">${v.name}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        ` : ''}
         <div class="product-process">
           <h4>Processing Steps</h4>
           <div class="process-flow">
@@ -508,6 +531,43 @@ function populateModal(product) {
       </div>
     </div>
   `;
+
+  // Populate the product images area (if images provided)
+  const imageItems = document.querySelectorAll('.product-image-item');
+  if (imageItems && imageItems.length >= 3) {
+    if (product.rawMaterialImage) {
+      imageItems[0].innerHTML = `
+        <div class="product-image-inner"><img src="${product.rawMaterialImage}" alt="Raw Material"></div>
+        <small>Raw Material</small>
+      `;
+    }
+    if (product.crystalImage) {
+      imageItems[1].innerHTML = `
+        <div class="product-image-inner"><img src="${product.crystalImage}" alt="Crystal Form"></div>
+        <small>Crystal Form</small>
+      `;
+    }
+    if (product.finalPowderImage) {
+      imageItems[2].innerHTML = `
+        <div class="product-image-inner"><img src="${product.finalPowderImage}" alt="Final Powder"></div>
+        <small>Final Powder</small>
+      `;
+    }
+  }
+
+  // Wire up variant click handlers (if any)
+  if (product.variants) {
+    const variantItems = document.querySelectorAll('.variant-item');
+    variantItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const id = this.getAttribute('data-variant-id');
+        const variant = product.variants.find(v => v.id === id);
+        if (variant) {
+          document.getElementById('modal-product-name').textContent = `${product.name} — ${variant.name}`;
+        }
+      });
+    });
+  }
 }
 
 function closeProductModal() {
