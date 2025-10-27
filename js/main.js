@@ -1,236 +1,255 @@
 // Sunrise Group of Industries - JavaScript Functionality
 
-// Products Data - 20 Stone/Powder Products
+// Products Data - 20 Stone/Powder Products (minimal metadata)
 const productsData = [
   {
     id: 1,
     name: "Calcium Carbonate (CaCO3)",
     rawMaterial: "Calcium Carbonate",
-    description: "Versatile calcium carbonate powder supplied in region-specific grades.",
-    process: "Crushing → Grinding → Classification → Packaging",
-    applications: ["Paper Industry", "Paints & Coatings", "Plastics", "Rubber"],
-    fineness: "200-400 mesh",
-    purity: "98%",
-    color: "White",
-      image: "images/powder_calcium_carbonate.jpeg",
-      rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-      crystalImage: "images/crystal_calcium_carbonate.png",
-      finalPowderImage: "images/powder_calcium_carbonate.jpeg",
-      // Placeholder variants for Calcium Carbonate. Replace `image` and `name` with your exact files/names.
-      variants: [
-        { id: 'caco3-in', name: 'Indian CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' },
-        { id: 'caco3-eg', name: 'Egypt CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' },
-        { id: 'caco3-vn', name: 'Vietnam CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' }
-      ]
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+  finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    // Placeholder variants for Calcium Carbonate. Replace `image` and `name` with your exact files/names.
+    variants: [
+      { id: 'caco3-in', name: 'Indian CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'caco3-eg', name: 'Egypt CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'caco3-vn', name: 'Vietnam CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' }
+    ]
   },
   {
     id: 2,
-    name: "Marble Powder",
-    rawMaterial: "Marble Stones",
-    description: "Premium marble powder derived from carefully selected marble stones, perfect for decorative and industrial uses.",
-    process: "Selection → Crushing → Fine Grinding → Quality Testing",
-    applications: ["Paints & Coatings", "Putty Manufacturing", "Tiles Production", "Cosmetics"],
-    fineness: "300-400 mesh",
-    purity: "99.5%",
-    color: "Pure White"
+    name: "Talc",
+    rawMaterial: "Talc",
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [
+      { id: 'talc-in', name: 'Indian Talc Powder', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'talc-af', name: 'Afghan Talc Powder', image: 'images/powder_calcium_carbonate.jpeg' }
+    ]
   },
   {
     id: 3,
-    name: "Dolomite Powder",
-    rawMaterial: "Dolomite Rocks",
-    description: "Processed dolomite powder from natural dolomite rocks, essential for various industrial applications.",
-    process: "Mining → Crushing → Milling → Classification",
-    applications: ["Glass Industry", "Steel Making", "Ceramics", "Rubber Industry"],
-    fineness: "200-325 mesh",
-    purity: "97%",
-    color: "White to Light Gray"
+    name: "Quick Lime",
+    rawMaterial: "Quick Lime",
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: []
   },
   {
     id: 4,
-    name: "Quartz Powder",
-    rawMaterial: "Quartz Crystals",
-    description: "Ultra-pure quartz powder processed from high-grade quartz crystals for precision applications.",
-    process: "Purification → Crushing → Ultra-fine Grinding → Purity Testing",
-    applications: ["Electronics", "Glass Manufacturing", "Foundry", "Construction"],
-    fineness: "100-500 mesh",
-    purity: "99.9%",
-    color: "Crystal White"
+    name: "Quartz",
+    rawMaterial: "Quartz",
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [
+      { id: 'quartz-snow', name: 'SNOW', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'quartz-super', name: 'SUPER', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'quartz-semi', name: 'SEMI', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'quartz-rose', name: 'ROSE', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'quartz-green', name: 'GREEN', image: 'images/powder_calcium_carbonate.jpeg' }
+    ]
   },
   {
     id: 5,
-    name: "Calcite Powder",
-    rawMaterial: "Calcite Stones",
-    description: "Refined calcite powder from natural calcite stones, widely used in industrial applications.",
-    process: "Extraction → Crushing → Grinding → Size Classification",
-    applications: ["Paper Industry", "Plastics", "Paint", "Adhesives"],
-    fineness: "200-400 mesh",
-    purity: "98.5%",
-    color: "White"
+    name: "Feldspan",
+    rawMaterial: "Feldspan",
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [
+      { id: 'feldspan-soda', name: 'Soda', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'feldspan-potash', name: 'Potash', image: 'images/powder_calcium_carbonate.jpeg' }
+    ]
   },
   {
     id: 6,
-    name: "Talc Powder",
-    rawMaterial: "Talc Rocks",
-    description: "Micronized talc powder processed from premium talc rocks with excellent properties.",
-    process: "Mining → Beneficiation → Grinding → Micronization",
-    applications: ["Cosmetics", "Pharmaceuticals", "Ceramics", "Paint Industry"],
-    fineness: "325-400 mesh",
-    purity: "96%",
-    color: "White to Light Green"
+    name: "Tumbled Pebbles",
+    rawMaterial: "Pebbles",
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [
+      { id: 'tp-black', name: 'Black', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'tp-green', name: 'Green', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'tp-white', name: 'White', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'tp-quartz-white', name: 'Quatrz White', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'tp-red', name: 'Red', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'tp-river-mix', name: 'River Mix', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'tp-teak', name: 'Teak Wood', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'tp-beige', name: 'Beige', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'tp-pwhite', name: 'P - White', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'tp-zebra', name: 'Zebra Black', image: 'images/powder_calcium_carbonate.jpeg' }
+    ]
   },
   {
     id: 7,
-    name: "Feldspar Powder",
-    rawMaterial: "Feldspar Rocks",
-    description: "High-grade feldspar powder derived from quality feldspar rocks for ceramic and glass industries.",
-    process: "Quarrying → Crushing → Grinding → Magnetic Separation",
-    applications: ["Ceramics", "Glass Industry", "Enamel", "Welding Electrodes"],
-    fineness: "100-300 mesh",
-    purity: "95%",
-    color: "Pink to White"
+    name: "Cabble Stone",
+    rawMaterial: "Cabble Stone",
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: []
   },
   {
     id: 8,
-    name: "Gypsum Powder",
-    rawMaterial: "Gypsum Stones",
-    description: "Fine gypsum powder processed from natural gypsum stones for construction applications.",
-    process: "Mining → Crushing → Calcination → Fine Grinding",
-    applications: ["Plaster of Paris", "Cement", "Fertilizers", "Soil Conditioning"],
-    fineness: "200-300 mesh",
-    purity: "97%",
-    color: "White"
+    name: "Oxyn Pebles",
+    rawMaterial: "Oxyn Pebles",
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [
+      { id: 'oxyn-mix', name: 'Mix', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'oxyn-fancy', name: 'Fancy Natural', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'oxyn-lemon', name: 'Lemon', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'oxyn-yellow', name: 'Yellow', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'oxyn-natural-banded', name: 'Natural Banded', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'oxyn-parrot', name: 'Parrot Green', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'oxyn-black-banded', name: 'Black Banded', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'oxyn-red', name: 'Red', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'oxyn-blue-jama', name: 'Blue Jama', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'oxyn-ruby', name: 'Ruby', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'oxyn-white-banded', name: 'White Banded', image: 'images/powder_calcium_carbonate.jpeg' }
+    ]
   },
   {
     id: 9,
-    name: "Mica Powder",
-    rawMaterial: "Mica Flakes",
-    description: "Processed mica powder from high-quality mica flakes with excellent electrical properties.",
-    process: "Dry Processing → Grinding → Classification → Quality Control",
-    applications: ["Electrical Industry", "Cosmetics", "Paints", "Rubber"],
-    fineness: "200-325 mesh",
-    purity: "94%",
-    color: "Silver to Golden"
+    name: "Dalomite",
+    rawMaterial: "Dalomite",
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [
+      { id: 'dalomite-lumps', name: 'Lumps', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'dalomite-powder', name: 'Powder', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'dalomite-grains', name: 'Grains', image: 'images/powder_calcium_carbonate.jpeg' }
+    ]
   },
   {
     id: 10,
-    name: "Barite Powder",
-    rawMaterial: "Barite Ore",
-    description: "Dense barite powder processed from premium barite ore for specialized applications.",
-    process: "Beneficiation → Crushing → Grinding → Flotation",
-    applications: ["Oil Drilling", "Paint Industry", "Rubber", "Plastics"],
-    fineness: "200-400 mesh",
-    purity: "96%",
-    color: "White"
+    name: "Aggregates",
+    rawMaterial: "Aggregates",
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [
+      { id: 'agg-white', name: 'White', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-blood-red', name: 'Blood Red', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-cherry-red', name: 'Cherry red', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-yellow', name: 'Yellow', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-black', name: 'Black', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-green', name: 'Green', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-chocolate', name: 'Choclate', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-pinkwood', name: 'Pinkwood', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-light-pink', name: 'Light Pink', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-p-white', name: 'P-White', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-mix', name: 'Mix', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-grey', name: 'Grey', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-red', name: 'Red', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-beige', name: 'Beige', image: 'images/powder_calcium_carbonate.jpeg' },
+      { id: 'agg-dark-pink', name: 'Dark-Pink', image: 'images/powder_calcium_carbonate.jpeg' }
+    ]
   },
   {
     id: 11,
-    name: "Bentonite Powder",
-    rawMaterial: "Bentonite Clay",
-    description: "Activated bentonite powder from natural bentonite clay with superior binding properties.",
-    process: "Activation → Crushing → Fine Grinding → Moisture Control",
-    applications: ["Foundry", "Drilling Fluids", "Cat Litter", "Agriculture"],
-    fineness: "200-300 mesh",
-    purity: "92%",
-    color: "Gray to Light Brown"
+    name: "GLASS",
+    rawMaterial: "GLASS",
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: []
   },
   {
     id: 12,
     name: "Silica Sand Powder",
     rawMaterial: "Silica Sand",
-    description: "Pure silica powder processed from high-grade silica sand for industrial applications.",
-    process: "Washing → Drying → Grinding → Grading",
-    applications: ["Glass Industry", "Foundry", "Construction", "Water Filtration"],
-    fineness: "40-200 mesh",
-    purity: "99%",
-    color: "White to Clear"
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [],
+    applications: []
   },
   {
     id: 13,
     name: "Kaolin Powder",
     rawMaterial: "Kaolin Clay",
-    description: "Refined kaolin powder from premium kaolin clay with excellent whiteness and purity.",
-    process: "Beneficiation → Grinding → Classification → Bleaching",
-    applications: ["Paper Industry", "Ceramics", "Paint", "Rubber"],
-    fineness: "325-400 mesh",
-    purity: "97%",
-    color: "Pure White"
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [],
+    applications: []
   },
   {
     id: 14,
     name: "Wollastonite Powder",
     rawMaterial: "Wollastonite Ore",
-    description: "Acicular wollastonite powder processed from natural wollastonite ore.",
-    process: "Mining → Crushing → Grinding → Magnetic Separation",
-    applications: ["Ceramics", "Plastics", "Paint", "Friction Products"],
-    fineness: "200-325 mesh",
-    purity: "95%",
-    color: "White"
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [],
+    applications: []
   },
   {
     id: 15,
     name: "China Clay Powder",
     rawMaterial: "China Clay",
-    description: "High-grade china clay powder processed from natural china clay deposits.",
-    process: "Extraction → Purification → Grinding → Classification",
-    applications: ["Paper Coating", "Ceramics", "Paint", "Rubber"],
-    fineness: "300-400 mesh",
-    purity: "96%",
-    color: "White"
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [],
+    applications: []
   },
   {
     id: 16,
     name: "Magnetite Powder",
     rawMaterial: "Magnetite Ore",
-    description: "Magnetic magnetite powder processed from high-grade magnetite ore.",
-    process: "Beneficiation → Crushing → Grinding → Magnetic Separation",
-    applications: ["Heavy Media Separation", "Welding Electrodes", "Concrete", "Water Treatment"],
-    fineness: "100-200 mesh",
-    purity: "94%",
-    color: "Black"
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [],
+    applications: []
   },
   {
     id: 17,
     name: "Graphite Powder",
     rawMaterial: "Graphite Flakes",
-    description: "Purified graphite powder from natural graphite flakes with excellent conductivity.",
-    process: "Flotation → Purification → Grinding → Classification",
-    applications: ["Lubricants", "Batteries", "Refractories", "Foundry"],
-    fineness: "200-400 mesh",
-    purity: "95%",
-    color: "Dark Gray"
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [],
+    applications: []
   },
   {
     id: 18,
     name: "Perlite Powder",
     rawMaterial: "Perlite Rock",
-    description: "Expanded perlite powder processed from volcanic perlite rock.",
-    process: "Crushing → Screening → Expansion → Fine Grinding",
-    applications: ["Construction", "Horticulture", "Filter Aid", "Insulation"],
-    fineness: "100-300 mesh",
-    purity: "93%",
-    color: "White to Gray"
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [],
+    applications: []
   },
   {
     id: 19,
     name: "Vermiculite Powder",
     rawMaterial: "Vermiculite Ore",
-    description: "Exfoliated vermiculite powder from natural vermiculite ore with thermal properties.",
-    process: "Exfoliation → Grinding → Grading → Quality Testing",
-    applications: ["Insulation", "Horticulture", "Fire Protection", "Construction"],
-    fineness: "100-200 mesh",
-    purity: "91%",
-    color: "Golden Brown"
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [],
+    applications: []
   },
   {
     id: 20,
     name: "Nepheline Syenite Powder",
     rawMaterial: "Nepheline Syenite Rock",
-    description: "Premium nepheline syenite powder processed from igneous nepheline syenite rock.",
-    process: "Quarrying → Crushing → Grinding → Flotation",
-    applications: ["Glass Industry", "Ceramics", "Filler", "Paint"],
-    fineness: "200-325 mesh",
-    purity: "94%",
-    color: "Gray to White"
+    image: "images/powder_calcium_carbonate.jpeg",
+    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    variants: [],
+    applications: []
   }
 ];
 
@@ -381,11 +400,12 @@ function setupProductSearch() {
   if (searchInput) {
     searchInput.addEventListener('input', function(e) {
       const searchTerm = e.target.value.toLowerCase();
-      const filteredProducts = productsData.filter(product => 
-        product.name.toLowerCase().includes(searchTerm) ||
-        product.rawMaterial.toLowerCase().includes(searchTerm) ||
-        product.applications.some(app => app.toLowerCase().includes(searchTerm))
-      );
+      const filteredProducts = productsData.filter(product => {
+        const inName = product.name && product.name.toLowerCase().includes(searchTerm);
+        const inRaw = product.rawMaterial && product.rawMaterial.toLowerCase().includes(searchTerm);
+        const inApps = (product.applications || []).some(app => app.toLowerCase().includes(searchTerm));
+        return inName || inRaw || inApps;
+      });
       
       const container = document.getElementById('products-container');
       displayProducts(filteredProducts, container);
@@ -402,7 +422,7 @@ function setupProductFilter() {
       
       if (filterValue !== 'all') {
         filteredProducts = productsData.filter(product => 
-          product.applications.some(app => app.toLowerCase().includes(filterValue))
+          (product.applications || []).some(app => app.toLowerCase().includes(filterValue))
         );
       }
       
@@ -442,19 +462,15 @@ function createProductModal() {
       </div>
       <div class="modal-body">
         <div class="product-images">
-          <div class="product-image-item">
-            <div>🪨</div>
-            <small>Raw Material</small>
-          </div>
-          <div class="product-image-item">
-            <div>💎</div>
-            <small>Crystal Form</small>
-          </div>
-          <div class="product-image-item">
-            <div>⚗️</div>
-            <small>Final Powder</small>
-          </div>
-        </div>
+              <div class="product-image-item">
+                <div>🪨</div>
+                <small>Raw Material</small>
+              </div>
+              <div class="product-image-item">
+                <div>⚗️</div>
+                <small>Final Powder</small>
+              </div>
+            </div>
         
         <div id="modal-product-details"></div>
         
@@ -480,75 +496,39 @@ function createProductModal() {
 function populateModal(product) {
   document.getElementById('modal-product-name').textContent = product.name;
   
+  // Only render available variants here. Product description, applications,
+  // processing steps and technical specs have been removed per request.
   const detailsContainer = document.getElementById('modal-product-details');
   detailsContainer.innerHTML = `
-    <div class="grid-2">
-      <div>
-        <h4>Product Description</h4>
-        <p>${product.description}</p>
-        
-        <h4>Raw Material</h4>
-        <p>${product.rawMaterial}</p>
-        
-        <h4>Applications</h4>
-        <ul style="list-style: disc; padding-left: 1.5rem;">
-          ${product.applications.map(app => `<li>${app}</li>`).join('')}
-        </ul>
-      </div>
-      
-      <div>
-        ${product.variants ? `
+    <div class="grid-1">
+      ${product.variants ? `
         <div class="product-variants">
           <h4>Available Variants</h4>
           <div class="variants-list">
             ${product.variants.map(v => `
               <div class="variant-item" data-variant-id="${v.id}">
-                <img src="${v.image}" alt="${v.name}" class="product-thumb-small">
+                ${v.image ? `<img src="${v.image}" alt="${v.name}" class="product-thumb-small">` : ''}
                 <div class="variant-name">${v.name}</div>
               </div>
             `).join('')}
           </div>
         </div>
-        ` : ''}
-        <div class="product-process">
-          <h4>Processing Steps</h4>
-          <div class="process-flow">
-            ${createProcessFlow(product.process)}
-          </div>
-        </div>
-        
-        <div class="product-specs" style="margin-top: 1rem;">
-          <div class="spec-item">
-            <strong>Fineness</strong><br>${product.fineness}
-          </div>
-          <div class="spec-item">
-            <strong>Purity</strong><br>${product.purity}
-          </div>
-          <div class="spec-item">
-            <strong>Color</strong><br>${product.color}
-          </div>
-        </div>
-      </div>
+      ` : `<p class="mb-0">Contact us for product details and specifications.</p>`}
     </div>
   `;
 
-  // Populate the product images area (if images provided)
+  // Populate the product images area (if images provided) - only Raw Material & Final Powder
   const imageItems = document.querySelectorAll('.product-image-item');
-  if (imageItems && imageItems.length >= 3) {
+  if (imageItems && imageItems.length >= 2) {
     if (product.rawMaterialImage) {
       imageItems[0].innerHTML = `
         <div class="product-image-inner"><img src="${product.rawMaterialImage}" alt="Raw Material"></div>
         <small>Raw Material</small>
       `;
     }
-    if (product.crystalImage) {
-      imageItems[1].innerHTML = `
-        <div class="product-image-inner"><img src="${product.crystalImage}" alt="Crystal Form"></div>
-        <small>Crystal Form</small>
-      `;
-    }
     if (product.finalPowderImage) {
-      imageItems[2].innerHTML = `
+      // Final powder goes into the second tile
+      imageItems[1].innerHTML = `
         <div class="product-image-inner"><img src="${product.finalPowderImage}" alt="Final Powder"></div>
         <small>Final Powder</small>
       `;
@@ -669,7 +649,6 @@ function displayFeaturedProducts(products, container) {
     card.innerHTML = `
       <h4>${product.name}</h4>
       <p>From ${product.rawMaterial}</p>
-      <p class="product-summary">${product.description.substring(0, 100)}...</p>
       <a href="products.html#product-${product.id}" class="btn btn-secondary">Learn More</a>
     `;
     container.appendChild(card);

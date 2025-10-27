@@ -999,6 +999,32 @@ select:focus {
   position: relative;
   z-index: 1;
 }
+.about-cta-bg {
+  background-image: url("../images/about-us-cta-img.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: var(--text-on-blue);
+}
+
+.about-cta-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10,25,76,0.45); /* semi-transparent overlay */
+  pointer-events: none;
+}
+
+/* Ensure inner content sits above overlay for about CTA sections */
+.about-cta-bg > .container,
+.about-cta-bg .container * {
+  position: relative;
+  z-index: 1;
+}
 .bg-light { background-color: var(--light-gray); }
 .mb-0 { margin-bottom: 0; }
 .mt-2 { margin-top: calc(var(--spacing) * 2); }
