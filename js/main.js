@@ -112,109 +112,129 @@ const productsData = [
     id: 5,
     name: "Feldspan",
     rawMaterial: "Feldspan",
-    image: "images/powder_calcium_carbonate.jpeg",
-    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    image: "images/feldspar_soda_powder.jpeg",
+    rawMaterialImage: "images/feldspar_raw_material.jpg",
+    finalPowderImage: "images/feldspar_soda_powder.jpeg",
+    originalDescription: "Feldspar is a group of rock-forming tectosilicate minerals important as fluxing agents in glass and ceramics. We supply both soda (sodium) and potash (potassium) feldspar grades milled to controlled particle sizes for consistent performance.",
     variants: [
-      { id: 'feldspan-soda', name: 'Soda', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'feldspan-potash', name: 'Potash', image: 'images/powder_calcium_carbonate.jpeg' }
+      {
+        id: 'feldspan-soda',
+        name: 'Soda (Sodium) Feldspar',
+        image: 'images/feldspar_soda_powder.jpeg',
+        description: 'Origin: Mined sodium-rich feldspar deposits. Uses: Widely used as a flux in glassmaking, ceramic bodies and glazes to lower melting temperature and improve strength and translucency. Also used in fillers for paints and adhesives.'
+      },
+      {
+        id: 'feldspan-potash',
+        name: 'Potash (Potassium) Feldspar',
+        image: 'images/feldspar_potash_powder.jpeg',
+        description: 'Origin: Potassium-rich feldspar quarries. Uses: Preferred in high-quality ceramics and porcelain for its fluxing characteristics that aid in vitrification and whiteness; also used in specialty glass and enamel formulations.'
+      }
     ]
   },
   {
     id: 6,
     name: "Tumbled Pebbles",
     rawMaterial: "Pebbles",
-    image: "images/powder_calcium_carbonate.jpeg",
-    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    // Tumbled pebbles are sold as stones (no powder). Use single pebble images per variant.
+    image: "images/white_tumbles_pebbles.jpeg",
+    rawMaterialImage: "images/white_tumbles_pebbles.jpeg",
+    finalPowderImage: "images/white_tumbles_pebbles.jpeg",
+    originalDescription: "Tumbled pebbles are natural stones smoothed and polished for decorative and landscaping use. We supply a range of colours and finishes suitable for construction, landscaping, aquariums, pathways and decorative aggregates.",
+  // show only single pebble image per variant (no separate raw/final tiles)
+  singleImageOnly: true,
     variants: [
-      { id: 'tp-black', name: 'Black', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'tp-green', name: 'Green', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'tp-white', name: 'White', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'tp-quartz-white', name: 'Quatrz White', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'tp-red', name: 'Red', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'tp-river-mix', name: 'River Mix', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'tp-teak', name: 'Teak Wood', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'tp-beige', name: 'Beige', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'tp-pwhite', name: 'P - White', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'tp-zebra', name: 'Zebra Black', image: 'images/powder_calcium_carbonate.jpeg' }
+      { id: 'tp-black', name: 'Black', image: 'images/black_tumbled_pebbles.webp', description: 'Black Tumbled Pebbles — Dense basalt stones, ideal for modern gardens, driveways and water-feature contrast.' },
+      { id: 'tp-green', name: 'Green', image: 'images/green_tumbled_pebbles.jpg', description: 'Green Tumbled Pebbles — Subtle green hues from riverstone mixes; perfect for planters, landscape beds and aquascaping.' },
+      { id: 'tp-white', name: 'White', image: 'images/quartz_white_tumled_pebbles.webp', description: 'White Quartz Pebbles — Bright, high-purity pebbles for premium landscaping, reflective pathways and aquarium substrates.' },
+      { id: 'tp-quartz-white', name: 'Quartz White', image: 'images/quartz_white_tumled_pebbles.webp', description: 'Quartz White — Polished quartz stones used in architectural features, terrazzo and decorative aggregate mixes.' },
+      { id: 'tp-red', name: 'Red', image: 'images/red_tumbled_pebbles.webp', description: 'Red Tumbled Pebbles — Iron-rich, warm-toned pebbles for accent borders, decorative pathways and coloured aggregate features.' },
+      { id: 'tp-river-mix', name: 'River Mix', image: 'images/river_mix_tumbled)pebbles.jpg', description: 'River Mix — Natural mixed-colour pebbles ideal for naturalistic landscaping, dry river beds and decorative displays.' },
+      { id: 'tp-teak', name: 'Teak Wood', image: 'images/teakwood_tumbled_pebbles.jpg', description: 'Teak Wood Tone — Warm brown stones that complement wood-toned landscapes and planters; great for pathways.' },
+      { id: 'tp-beige', name: 'Beige', image: 'images/beige_tumbled_pebbles.jpg', description: 'Beige Pebbles — Neutral sandstone/limestone tones for subtle walkways, borders and decorative groundcover.' },
+      { id: 'tp-pwhite', name: 'P - White', image: 'images/p_white_tumble_pebbles.webp', description: 'Processed White — Uniform processed white pebbles used in design accents, high-contrast landscaping and display beds.' },
+      { id: 'tp-zebra', name: 'Zebra Black', image: 'images/zebrablack_tumbled_pebbles.png', description: 'Zebra Black — Banding stone with striking patterns, best for feature accents, patterned pathways and ornamental designs.' }
     ]
   },
   {
     id: 7,
-    name: "Cabble Stone",
-    rawMaterial: "Cabble Stone",
-    image: "images/powder_calcium_carbonate.jpeg",
-    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    name: "Cobble Stone",
+    rawMaterial: "Cobble Stone",
+    // This product is sold as whole stones only (no raw material / powder tiles)
+    image: "images/cobble_stone.jpeg",
+    singleImageOnly: true,
+    originalDescription: "Cobble Stone — Natural rounded cobbles used for paving, driveways, pathways and decorative landscaping. Durable and weather-resistant, ideal for rustic and traditional exterior finishes.",
     variants: []
   },
   {
     id: 8,
     name: "Oxyn Pebles",
     rawMaterial: "Oxyn Pebles",
-    image: "images/powder_calcium_carbonate.jpeg",
-    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    // Oxyn Pebbles are sold as decorative stones only — show one main image and variant thumbnails
+    image: 'images/oxyn_pebbles.png',
+    singleImageOnly: true,
+    originalDescription: 'Oxyn Pebbles — A decorative line of polished and natural pebbles available in multiple colours and finishes for landscaping, pathways, driveways and decorative aggregates.',
     variants: [
-      { id: 'oxyn-mix', name: 'Mix', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'oxyn-fancy', name: 'Fancy Natural', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'oxyn-lemon', name: 'Lemon', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'oxyn-yellow', name: 'Yellow', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'oxyn-natural-banded', name: 'Natural Banded', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'oxyn-parrot', name: 'Parrot Green', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'oxyn-black-banded', name: 'Black Banded', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'oxyn-red', name: 'Red', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'oxyn-blue-jama', name: 'Blue Jama', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'oxyn-ruby', name: 'Ruby', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'oxyn-white-banded', name: 'White Banded', image: 'images/powder_calcium_carbonate.jpeg' }
+      { id: 'oxyn-mix', name: 'Mix', image: 'images/oxyn_pebbles.png', description: 'Oxyn Mix — A curated blend of colours and sizes for naturalistic landscaping, riverbed simulation and decorative groundcover.' },
+      { id: 'oxyn-fancy', name: 'Fancy Natural', image: 'images/fancy_natural_oxyn_pebbles.jpg', description: 'Fancy Natural — Eye-catching natural patterns ideal for ornamental planters, feature borders and high-end landscape accents.' },
+      { id: 'oxyn-lemon', name: 'Lemon', image: 'images/lemon_oxyn_pebbles.webp', description: 'Lemon — Warm yellow-toned pebbles that brighten pathways, patios and display beds with a sunny accent.' },
+      { id: 'oxyn-yellow', name: 'Yellow', image: 'images/yellow_oxyn_pebbles.webp', description: 'Yellow — Vibrant yellow stones used for accent borders, decorative aggregates and colour-contrasting designs.' },
+      { id: 'oxyn-natural-banded', name: 'Natural Banded', image: 'images/natural_banded_oxyn_pebbles.jpg', description: 'Natural Banded — Striated stones with subtle banding for textured surfaces, terrazzo mixes and decorative aggregates.' },
+      { id: 'oxyn-parrot', name: 'Parrot Green', image: 'images/parrot_green_oxyn_pebbles.jpeg', description: 'Parrot Green — Bright green pebbles suited for planters, aquascaping and vibrant landscape features.' },
+      { id: 'oxyn-black-banded', name: 'Black Banded', image: 'images/black_banded_oxyn_pebbles.jpg', description: 'Black Banded — Dark, patterned pebbles used for contemporary landscapes, water features and contrast edges.' },
+      { id: 'oxyn-red', name: 'Red', image: 'images/red_oxyn_pebbles.jpeg', description: 'Red — Rich red-toned pebbles for accent pathways, decorative borders and rustic design themes.' },
+      { id: 'oxyn-blue-jama', name: 'Blue Jamun', image: 'images/blue_jamun_oxyn_pebbles.jpg', description: 'Blue Jamun — Unique blue-toned pebbles for statement landscaping, decorative planters and premium features.' },
+      { id: 'oxyn-ruby', name: 'Ruby', image: 'images/ruby_oxyn_pebbles.webp', description: 'Ruby — Deep, jewel-toned pebbles used as premium accents in ornamental designs and decorative displays.' },
+      { id: 'oxyn-white-banded', name: 'White Banded', image: 'images/white_banded_oxyn_pebbles.webp', description: 'White Banded — Light-toned banded stones for bright pathways, terrazzo mixes and reflective landscaping.' }
     ]
   },
   {
     id: 9,
-    name: "Dalomite",
-    rawMaterial: "Dalomite",
-    image: "images/powder_calcium_carbonate.jpeg",
-    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    name: "Dolomite",
+    rawMaterial: "Dolomite",
+    // Show a single main image (lumps) and allow selecting sub-types; no Raw Material / Final Powder tiles
+    image: 'images/dolamite_lumps.webp',
+    singleImageOnly: true,
+    originalDescription: 'Dolomite — Mined dolomite supplied as lumps, grains or processed powder. Our dolomite grades are used in construction, agriculture, glass and ceramics, and as fillers in various industrial compounds.',
     variants: [
-      { id: 'dalomite-lumps', name: 'Lumps', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'dalomite-powder', name: 'Powder', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'dalomite-grains', name: 'Grains', image: 'images/powder_calcium_carbonate.jpeg' }
+      { id: 'dolomite-lumps', name: 'Lumps', image: 'images/dolamite_lumps.webp', description: 'Dolomite Lumps — Coarse quarried pieces, used in construction aggregates, landscaping, and as feedstock for crushing and processing to specific size fractions.' },
+      { id: 'dolomite-powder', name: 'Powder', image: 'images/dolamite_powder.jpeg', description: 'Dolomite Powder — Finely milled dolomite for use as a filler in paints, plastics and rubber, and as a fluxing/conditioning agent in ceramics and glass formulations.' },
+      { id: 'dolomite-grains', name: 'Grains', image: 'images/dolamite_grains.jpg', description: 'Dolomite Grains — Medium-sized granules suitable for filtration media, agricultural soil amendment and decorative aggregates.' }
     ]
   },
   {
     id: 10,
     name: "Aggregates",
     rawMaterial: "Aggregates",
-    image: "images/powder_calcium_carbonate.jpeg",
-    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    // Aggregates are decorative/utility stones — show a main image and individual variant types (no powder/raw tiles)
+    image: 'images/mix_aggregates.png',
+    singleImageOnly: true,
+    originalDescription: 'Aggregates — Decorative and functional aggregates in multiple colours and sizes for landscaping, pathways, driveways and construction finishes. Available in uniform and mixed blends for design or engineering use.',
     variants: [
-      { id: 'agg-white', name: 'White', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-blood-red', name: 'Blood Red', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-cherry-red', name: 'Cherry red', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-yellow', name: 'Yellow', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-black', name: 'Black', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-green', name: 'Green', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-chocolate', name: 'Choclate', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-pinkwood', name: 'Pinkwood', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-light-pink', name: 'Light Pink', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-p-white', name: 'P-White', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-mix', name: 'Mix', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-grey', name: 'Grey', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-red', name: 'Red', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-beige', name: 'Beige', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'agg-dark-pink', name: 'Dark-Pink', image: 'images/powder_calcium_carbonate.jpeg' }
+      { id: 'agg-white', name: 'White', image: 'images/white_aggregates.jpeg', description: 'White Aggregates — Bright, clean stones used in reflective pathways, terrazzo mixes and premium landscaping.' },
+      { id: 'agg-blood-red', name: 'Blood Red', image: 'images/bloodred_aggregates.jpg', description: 'Blood Red — Deep red aggregates for bold accents, borders and decorative installations.' },
+      { id: 'agg-cherry-red', name: 'Cherry Red', image: 'images/cherry_red_aggregates.jpg', description: 'Cherry Red — Vibrant red pebbles ideal for feature beds and colourful pathway designs.' },
+      { id: 'agg-yellow', name: 'Yellow', image: 'images/yellow_aggregates.jpeg', description: 'Yellow Aggregates — Sunny yellow stones for accenting landscapes and creating contrast in design layouts.' },
+      { id: 'agg-black', name: 'Black', image: 'images/black_aggregates.jpg', description: 'Black Aggregates — Contrast stones for modern landscapes, edging and water-feature surrounds.' },
+      { id: 'agg-green', name: 'Green', image: 'images/green_aggregates.jpg', description: 'Green Aggregates — Natural green hues suitable for planters, aquascaping and ornamental features.' },
+      { id: 'agg-chocolate', name: 'Chocolate', image: 'images/choclate_aggregates.jpeg', description: 'Chocolate — Warm brown aggregates that blend with wood tones and rustic garden themes.' },
+      { id: 'agg-pinkwood', name: 'Pinkwood', image: 'images/pinkwood_aggregates.jpeg', description: 'Pinkwood — Subtle pink-brown stones used in decorative borders and bespoke landscaping.' },
+      { id: 'agg-light-pink', name: 'Light Pink', image: 'images/light_pink_aggregates.avif', description: 'Light Pink — Soft pink aggregates for delicate decorative features and display beds.' },
+      { id: 'agg-p-white', name: 'P-White', image: 'images/p_white_aggregates.jpeg', description: 'Processed White (P-White) — Uniform white aggregates processed for consistent sizing and colour, great for display and terrazzo.' },
+      { id: 'agg-mix', name: 'Mix', image: 'images/mix_aggregates.png', description: 'Mix — A blended selection of colours and sizes for naturalistic layouts and mixed-colour designs.' },
+      { id: 'agg-grey', name: 'Grey', image: 'images/grey_aggregates.jpeg', description: 'Grey Aggregates — Neutral grey stones for contemporary pathways, driveways and construction blends.' },
+      { id: 'agg-red', name: 'Red', image: 'images/red_aggregates.jpeg', description: 'Red Aggregates — Classic red stones used in traditional and decorative surfaces.' },
+      { id: 'agg-beige', name: 'Beige', image: 'images/beige_aggregates.jpeg', description: 'Beige Aggregates — Soft neutral tones for subtle landscaping, borders and groundcover.' },
+      { id: 'agg-dark-pink', name: 'Dark Pink', image: 'images/dark_pink_aggregates.jpg', description: 'Dark Pink — Rich pink-toned aggregates for ornamental features and accent beds.' }
     ]
   },
   {
     id: 11,
     name: "GLASS",
     rawMaterial: "GLASS",
-    image: "images/powder_calcium_carbonate.jpeg",
-    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    // Glass product shown as a single image (no raw/final powder tiles)
+    image: 'images/glass.jpeg',
+    singleImageOnly: true,
+    originalDescription: 'Glass Raw Material — High-quality silica and glass sand resources suitable for glass manufacturing, specialty glass formulations and industrial applications requiring controlled silica content and low impurities.',
     variants: []
   },
   {
@@ -586,20 +606,33 @@ function populateModal(product) {
   detailsContainer.innerHTML = detailsHtml;
 
   // Populate the product images area (if images provided) - only Raw Material & Final Powder
-  const imageItems = document.querySelectorAll('.product-image-item');
-  if (imageItems && imageItems.length >= 2) {
-    if (product.rawMaterialImage) {
-      imageItems[0].innerHTML = `
-        <div class="product-image-inner"><img src="${product.rawMaterialImage}" alt="Raw Material"></div>
-        <small>Raw Material</small>
-      `;
-    }
-    if (product.finalPowderImage) {
-      // Final powder goes into the second tile
-      imageItems[1].innerHTML = `
-        <div class="product-image-inner"><img src="${product.finalPowderImage}" alt="Final Powder"></div>
-        <small>Final Powder</small>
-      `;
+  // Handle image tiles. For most products we show Raw Material + Final Powder.
+  // For products with `singleImageOnly` we replace tiles with a single large image that updates on variant click.
+  const imagesContainer = document.querySelector('.product-images');
+  if (product.singleImageOnly) {
+    // render single tile
+    imagesContainer.innerHTML = `
+      <div class="product-image-item single-image-item">
+        <div class="product-image-inner"><img src="${product.image || product.variants[0]?.image || ''}" alt="Product Image"></div>
+        <small>${product.name}</small>
+      </div>
+    `;
+  } else {
+    const imageItems = document.querySelectorAll('.product-image-item');
+    if (imageItems && imageItems.length >= 2) {
+      if (product.rawMaterialImage) {
+        imageItems[0].innerHTML = `
+          <div class="product-image-inner"><img src="${product.rawMaterialImage}" alt="Raw Material"></div>
+          <small>Raw Material</small>
+        `;
+      }
+      if (product.finalPowderImage) {
+        // Final powder goes into the second tile
+        imageItems[1].innerHTML = `
+          <div class="product-image-inner"><img src="${product.finalPowderImage}" alt="Final Powder"></div>
+          <small>Final Powder</small>
+        `;
+      }
     }
   }
 
@@ -622,24 +655,38 @@ function populateModal(product) {
             }
           }
 
-          // If variant has its own image, swap the Final Powder tile to show it
-          const imageItems = document.querySelectorAll('.product-image-item');
-          if (imageItems && imageItems.length >= 2) {
-            if (variant.image) {
-              imageItems[1].innerHTML = `
-                <div class="product-image-inner"><img src="${variant.image}" alt="Final Powder"></div>
-                <small>Final Powder</small>
-              `;
-            } else if (product.finalPowderImage) {
-              imageItems[1].innerHTML = `
-                <div class="product-image-inner"><img src="${product.finalPowderImage}" alt="Final Powder"></div>
-                <small>Final Powder</small>
-              `;
+          // If product is singleImageOnly, update the single image tile; otherwise update Final Powder tile
+          if (product.singleImageOnly) {
+            const singleEl = document.querySelector('.product-image-item.single-image-item .product-image-inner');
+            if (singleEl) {
+              singleEl.innerHTML = `<img src="${variant.image || product.image || ''}" alt="${variant.name}">`;
+            }
+          } else {
+            const imageItems = document.querySelectorAll('.product-image-item');
+            if (imageItems && imageItems.length >= 2) {
+              if (variant.image) {
+                imageItems[1].innerHTML = `
+                  <div class="product-image-inner"><img src="${variant.image}" alt="Final Powder"></div>
+                  <small>Final Powder</small>
+                `;
+              } else if (product.finalPowderImage) {
+                imageItems[1].innerHTML = `
+                  <div class="product-image-inner"><img src="${product.finalPowderImage}" alt="Final Powder"></div>
+                  <small>Final Powder</small>
+                `;
+              }
             }
           }
         }
       });
     });
+    // Auto-select the first variant so image and description appear immediately
+    if (variantItems.length > 0) {
+      // small timeout to ensure DOM updates finished
+      setTimeout(() => {
+        variantItems[0].click();
+      }, 10);
+    }
   }
 }
 
