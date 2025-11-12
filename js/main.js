@@ -31,6 +31,13 @@ const productsData = [
         image: 'images/vietnam_calcium_carbonate_powder.jpeg',
         description: 'Origin: Vietnam — Balanced grades ideal for broad industrial use, offering moderate brightness and balanced particle distribution. Typical uses: rubber and PVC fillers, general-purpose plastics, paper and agricultural lime where a good cost-performance balance is required.'
       }
+      ,
+      {
+        id: 'caco3-pcc',
+        name: 'Precipitated Calcium Carbonate (PCC)',
+        image: 'images/precepitated_calcium_carbonate.jpeg',
+        description: 'Precipitated Calcium Carbonate (PCC) is a synthetically produced, high-purity form of CaCO3 with tightly controlled particle size, morphology and surface properties. Common uses include high-brightness paper coatings, filler in plastics and paints, adhesives, sealants and specialty applications where uniformity, whiteness and surface area are critical.'
+      }
     ]
   },
   {
