@@ -9,47 +9,103 @@ const productsData = [
     image: "images/powder_calcium_carbonate.jpeg",
     rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
   finalPowderImage: "images/powder_calcium_carbonate.jpeg",
-    // Placeholder variants for Calcium Carbonate. Replace `image` and `name` with your exact files/names.
+    // Updated variants: use country-specific images (placed in `images/`) and include short descriptions
+    originalDescription: "Calcium carbonate (CaCO3) is a versatile mineral powder sourced from limestone and marine deposits. It is widely used as a filler and functional additive in paints, plastics, paper, adhesives, rubber and construction. Different regional grades vary in brightness, particle-size distribution and bulk density to suit specific industrial needs.",
     variants: [
-      { id: 'caco3-in', name: 'Indian CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'caco3-eg', name: 'Egypt CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'caco3-vn', name: 'Vietnam CaCO3 Powder', image: 'images/powder_calcium_carbonate.jpeg' }
+      {
+        id: 'caco3-in',
+        name: 'Indian CaCO3 Powder',
+        image: 'images/indian_calcium_carbonate_powder.jpeg',
+        description: 'Origin: India — High-purity limestone-derived calcium carbonate with excellent brightness and fine particle size. Typical uses: paints & coatings, paper coating, specialty plastics and high-end filler applications where whiteness and surface finish are critical.'
+      },
+      {
+        id: 'caco3-eg',
+        name: 'Egypt CaCO3 Powder',
+        image: 'images/egypt_calcium_carbonate_powder.jpg',
+        description: 'Origin: Egypt — Sourced from natural marine limestone deposits offering good whiteness and higher bulk density. Typical uses: cement & construction fillers, heavy-duty compounds and industrial applications that benefit from higher density and cost-effective performance.'
+      },
+      {
+        id: 'caco3-vn',
+        name: 'Vietnam CaCO3 Powder',
+        image: 'images/vietnam_calcium_carbonate_powder.jpeg',
+        description: 'Origin: Vietnam — Balanced grades ideal for broad industrial use, offering moderate brightness and balanced particle distribution. Typical uses: rubber and PVC fillers, general-purpose plastics, paper and agricultural lime where a good cost-performance balance is required.'
+      }
     ]
   },
   {
     id: 2,
     name: "Talc",
     rawMaterial: "Talc",
-    image: "images/powder_calcium_carbonate.jpeg",
-    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    // Image files for Talc. Please place the actual images in `images/` with these names
+  image: "images/indian_talc.jpeg",
+  rawMaterialImage: "images/indian_talc_raw.jpg",
+  finalPowderImage: "images/indian_talc.jpeg",
+    originalDescription: "Talc is a naturally occurring mineral composed primarily of magnesium, silicon and oxygen. Our talc powders are finely milled to produce soft, plate-like particles with excellent lubricity, high brightness and low abrasive properties. They are widely used as fillers and functional additives in paints, plastics, rubber, ceramics, cosmetics and paper, offering improved smoothness, opacity and processing stability.",
     variants: [
-      { id: 'talc-in', name: 'Indian Talc Powder', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'talc-af', name: 'Afghan Talc Powder', image: 'images/powder_calcium_carbonate.jpeg' }
+      {
+        id: 'talc-in',
+        name: 'Indian Talc Powder',
+        image: 'images/indian_talc.jpeg',
+        description: 'Indian talc is known for its high brightness and fine particle size. Our Indian talc variant is well-suited for cosmetic applications, paper coating, and high-end paints where smoothness, opacity and aesthetic finish are critical.'
+      },
+      {
+        id: 'talc-af',
+        name: 'Afghan Talc Powder',
+        image: 'images/afghan_talc_powder.jpg',
+        description: 'Afghan talc offers excellent bulk density and thermal stability, making it a preferred choice for industrial applications such as rubber compounding, plastics fillers and ceramic formulations where functional performance and cost-effectiveness are important.'
+      }
     ]
   },
   {
     id: 3,
     name: "Quick Lime",
     rawMaterial: "Quick Lime",
-    image: "images/powder_calcium_carbonate.jpeg",
-    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    image: "images/quick_lime_powder.jpeg",
+    rawMaterialImage: "images/quick_lime_raw.jpeg",
+    finalPowderImage: "images/quick_lime_powder.jpeg",
+    originalDescription: "Quick lime (calcium oxide, CaO) is produced by calcining limestone and is a highly reactive material used across industries. Our quick lime grades are produced under controlled calcination to deliver consistent reactivity, purity and particle-size distribution.",
+    // Common uses: steel & metallurgy, water & wastewater treatment, flue-gas desulfurization, construction (lime mortars), and chemical manufacturing.
     variants: []
   },
   {
     id: 4,
     name: "Quartz",
     rawMaterial: "Quartz",
-    image: "images/powder_calcium_carbonate.jpeg",
-    rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    image: "images/snow_quartz_powder.jpeg",
+    rawMaterialImage: "images/quartz_raw.jpeg",
+    finalPowderImage: "images/snow_quartz_powder.jpeg",
+    originalDescription: "Quartz is a hard, crystalline mineral widely used as a functional filler and abrasive. Our milled quartz powders are supplied in several grades (fine to coarse) and colour variants to meet requirements in glass, ceramics, coatings, polymers and construction sectors.",
     variants: [
-      { id: 'quartz-snow', name: 'SNOW', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'quartz-super', name: 'SUPER', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'quartz-semi', name: 'SEMI', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'quartz-rose', name: 'ROSE', image: 'images/powder_calcium_carbonate.jpeg' },
-      { id: 'quartz-green', name: 'GREEN', image: 'images/powder_calcium_carbonate.jpeg' }
+      {
+        id: 'quartz-snow',
+        name: 'SNOW',
+        image: 'images/snow_quartz_powder.jpeg',
+        description: 'Origin: High-purity silica sources. Uses: High-brightness fillers for paints & coatings, specialty glass formulations and high-end ceramics where low iron and high whiteness are required.'
+      },
+      {
+        id: 'quartz-super',
+        name: 'SUPER',
+        image: 'images/super_quatrz_powder.jpg',
+        description: 'Origin: Selected silica quarries. Uses: Premium glass and electronic-grade applications; also used where tight particle-size distribution and low contaminant levels are critical.'
+      },
+      {
+        id: 'quartz-semi',
+        name: 'SEMI',
+        image: 'images/semi_quartz_powder.jpeg',
+        description: 'Origin: Industrial silica deposits. Uses: General-purpose fillers for plastics, rubber and construction materials offering good balance of performance and cost.'
+      },
+      {
+        id: 'quartz-rose',
+        name: 'ROSE',
+        image: 'images/rose_quartz_powder.jpg',
+        description: 'Origin: Naturally coloured silica deposits. Uses: Decorative applications, coloured mortars, terrazzo and specialty architectural finishes where colour and texture matter.'
+      },
+      {
+        id: 'quartz-green',
+        name: 'GREEN',
+        image: 'images/green_quartz_powder.jpg',
+        description: 'Origin: Pigmented or mineral-mix sources. Uses: Specialty coatings, decorative aggregates and applications requiring a green-tinted filler for aesthetic or functional reasons.'
+      }
     ]
   },
   {
@@ -499,23 +555,35 @@ function populateModal(product) {
   // Only render available variants here. Product description, applications,
   // processing steps and technical specs have been removed per request.
   const detailsContainer = document.getElementById('modal-product-details');
-  detailsContainer.innerHTML = `
-    <div class="grid-1">
-      ${product.variants ? `
-        <div class="product-variants">
-          <h4>Available Variants</h4>
-          <div class="variants-list">
-            ${product.variants.map(v => `
-              <div class="variant-item" data-variant-id="${v.id}">
-                ${v.image ? `<img src="${v.image}" alt="${v.name}" class="product-thumb-small">` : ''}
-                <div class="variant-name">${v.name}</div>
-              </div>
-            `).join('')}
-          </div>
+  // Build details HTML: include originalDescription (if present) and variants
+  let detailsHtml = '<div class="grid-1">';
+
+  if (product.originalDescription) {
+    detailsHtml += `<div class="product-description"><h4>About this product</h4><p>${product.originalDescription}</p></div>`;
+  }
+
+    if (product.variants && product.variants.length > 0) {
+    detailsHtml += `
+      <div class="product-variants">
+        <h4>Available Variants</h4>
+        <div class="variants-list">
+          ${product.variants.map(v => `
+            <div class="variant-item" data-variant-id="${v.id}">
+              ${v.image ? `<img src="${v.image}" alt="${v.name}" class="product-thumb-small">` : ''}
+              <div class="variant-name">${v.name}</div>
+            </div>
+          `).join('')}
         </div>
-      ` : `<p class="mb-0">Contact us for product details and specifications.</p>`}
-    </div>
-  `;
+      </div>
+    `;
+      // Placeholder for variant-specific description
+      detailsHtml += `<div id="variant-description" class="mt-2"></div>`;
+  } else {
+    detailsHtml += `<p class="mb-0">Contact us for product details and specifications.</p>`;
+  }
+
+  detailsHtml += '</div>';
+  detailsContainer.innerHTML = detailsHtml;
 
   // Populate the product images area (if images provided) - only Raw Material & Final Powder
   const imageItems = document.querySelectorAll('.product-image-item');
@@ -544,6 +612,31 @@ function populateModal(product) {
         const variant = product.variants.find(v => v.id === id);
         if (variant) {
           document.getElementById('modal-product-name').textContent = `${product.name} — ${variant.name}`;
+          // Update variant-specific description if provided
+          const variantDescEl = document.getElementById('variant-description');
+          if (variantDescEl) {
+            if (variant.description) {
+              variantDescEl.innerHTML = `<h4>${variant.name}</h4><p>${variant.description}</p>`;
+            } else {
+              variantDescEl.innerHTML = '';
+            }
+          }
+
+          // If variant has its own image, swap the Final Powder tile to show it
+          const imageItems = document.querySelectorAll('.product-image-item');
+          if (imageItems && imageItems.length >= 2) {
+            if (variant.image) {
+              imageItems[1].innerHTML = `
+                <div class="product-image-inner"><img src="${variant.image}" alt="Final Powder"></div>
+                <small>Final Powder</small>
+              `;
+            } else if (product.finalPowderImage) {
+              imageItems[1].innerHTML = `
+                <div class="product-image-inner"><img src="${product.finalPowderImage}" alt="Final Powder"></div>
+                <small>Final Powder</small>
+              `;
+            }
+          }
         }
       });
     });
