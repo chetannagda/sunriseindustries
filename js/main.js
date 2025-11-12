@@ -6,9 +6,10 @@ const productsData = [
     id: 1,
     name: "Calcium Carbonate (CaCO3)",
     rawMaterial: "Calcium Carbonate",
-    image: "images/powder_calcium_carbonate.jpeg",
+    // show raw material on the card instead of processed powder
+    image: "images/raw_calcium_carbonte.jpeg",
     rawMaterialImage: "images/raw_calcium_carbonte.jpeg",
-  finalPowderImage: "images/powder_calcium_carbonate.jpeg",
+    finalPowderImage: "images/powder_calcium_carbonate.jpeg",
     // Updated variants: use country-specific images (placed in `images/`) and include short descriptions
     originalDescription: "Calcium carbonate (CaCO3) is a versatile mineral powder sourced from limestone and marine deposits. It is widely used as a filler and functional additive in paints, plastics, paper, adhesives, rubber and construction. Different regional grades vary in brightness, particle-size distribution and bulk density to suit specific industrial needs.",
     variants: [
@@ -37,7 +38,8 @@ const productsData = [
     name: "Talc",
     rawMaterial: "Talc",
     // Image files for Talc. Please place the actual images in `images/` with these names
-  image: "images/indian_talc.jpeg",
+  // show raw material image on the product card (user requested talc to display raw material)
+  image: "images/indian_talc_raw.jpg",
   rawMaterialImage: "images/indian_talc_raw.jpg",
   finalPowderImage: "images/indian_talc.jpeg",
     originalDescription: "Talc is a naturally occurring mineral composed primarily of magnesium, silicon and oxygen. Our talc powders are finely milled to produce soft, plate-like particles with excellent lubricity, high brightness and low abrasive properties. They are widely used as fillers and functional additives in paints, plastics, rubber, ceramics, cosmetics and paper, offering improved smoothness, opacity and processing stability.",
@@ -60,7 +62,8 @@ const productsData = [
     id: 3,
     name: "Quick Lime",
     rawMaterial: "Quick Lime",
-    image: "images/quick_lime_powder.jpeg",
+    // show raw quick lime on the product card
+    image: "images/quick_lime_raw.jpeg",
     rawMaterialImage: "images/quick_lime_raw.jpeg",
     finalPowderImage: "images/quick_lime_powder.jpeg",
     originalDescription: "Quick lime (calcium oxide, CaO) is produced by calcining limestone and is a highly reactive material used across industries. Our quick lime grades are produced under controlled calcination to deliver consistent reactivity, purity and particle-size distribution.",
@@ -71,7 +74,8 @@ const productsData = [
     id: 4,
     name: "Quartz",
     rawMaterial: "Quartz",
-    image: "images/snow_quartz_powder.jpeg",
+    // show raw quartz on the card
+    image: "images/quartz_raw.jpeg",
     rawMaterialImage: "images/quartz_raw.jpeg",
     finalPowderImage: "images/snow_quartz_powder.jpeg",
     originalDescription: "Quartz is a hard, crystalline mineral widely used as a functional filler and abrasive. Our milled quartz powders are supplied in several grades (fine to coarse) and colour variants to meet requirements in glass, ceramics, coatings, polymers and construction sectors.",
@@ -112,7 +116,8 @@ const productsData = [
     id: 5,
     name: "Feldspan",
     rawMaterial: "Feldspan",
-    image: "images/feldspar_soda_powder.jpeg",
+    // show raw feldspar on the product card
+    image: "images/feldspar_raw_material.jpg",
     rawMaterialImage: "images/feldspar_raw_material.jpg",
     finalPowderImage: "images/feldspar_soda_powder.jpeg",
     originalDescription: "Feldspar is a group of rock-forming tectosilicate minerals important as fluxing agents in glass and ceramics. We supply both soda (sodium) and potash (potassium) feldspar grades milled to controlled particle sizes for consistent performance.",
@@ -237,6 +242,7 @@ const productsData = [
     originalDescription: 'Glass Raw Material — High-quality silica and glass sand resources suitable for glass manufacturing, specialty glass formulations and industrial applications requiring controlled silica content and low impurities.',
     variants: []
   },
+  /*
   {
     id: 12,
     name: "Silica Sand Powder",
@@ -327,6 +333,7 @@ const productsData = [
     variants: [],
     applications: []
   }
+  */
 ];
 
 // DOM Elements
@@ -578,11 +585,16 @@ function populateModal(product) {
   // Build details HTML: include originalDescription (if present) and variants
   let detailsHtml = '<div class="grid-1">';
 
+  // Always insert a placeholder for variant-specific description so it can be populated
+  // after the user selects a variant. This placeholder appears above the main product
+  // description so variant details take precedence when shown.
+  detailsHtml += `<div id="variant-description" class="mt-2"></div>`;
+
   if (product.originalDescription) {
     detailsHtml += `<div class="product-description"><h4>About this product</h4><p>${product.originalDescription}</p></div>`;
   }
 
-    if (product.variants && product.variants.length > 0) {
+  if (product.variants && product.variants.length > 0) {
     detailsHtml += `
       <div class="product-variants">
         <h4>Available Variants</h4>
@@ -596,8 +608,6 @@ function populateModal(product) {
         </div>
       </div>
     `;
-      // Placeholder for variant-specific description
-      detailsHtml += `<div id="variant-description" class="mt-2"></div>`;
   } else {
     detailsHtml += `<p class="mb-0">Contact us for product details and specifications.</p>`;
   }
@@ -605,33 +615,45 @@ function populateModal(product) {
   detailsHtml += '</div>';
   detailsContainer.innerHTML = detailsHtml;
 
-  // Populate the product images area (if images provided) - only Raw Material & Final Powder
-  // Handle image tiles. For most products we show Raw Material + Final Powder.
-  // For products with `singleImageOnly` we replace tiles with a single large image that updates on variant click.
+  // Populate the product images area (reset to a known default first)
+  // Default layout: two tiles (Raw Material + Final Powder). We'll replace with a single tile for stone-only products.
   const imagesContainer = document.querySelector('.product-images');
-  if (product.singleImageOnly) {
-    // render single tile
+  if (imagesContainer) {
     imagesContainer.innerHTML = `
-      <div class="product-image-item single-image-item">
-        <div class="product-image-inner"><img src="${product.image || product.variants[0]?.image || ''}" alt="Product Image"></div>
-        <small>${product.name}</small>
+      <div class="product-image-item">
+        <div>🪨</div>
+        <small>Raw Material</small>
+      </div>
+      <div class="product-image-item">
+        <div>⚗️</div>
+        <small>Final Powder</small>
       </div>
     `;
-  } else {
-    const imageItems = document.querySelectorAll('.product-image-item');
-    if (imageItems && imageItems.length >= 2) {
-      if (product.rawMaterialImage) {
-        imageItems[0].innerHTML = `
-          <div class="product-image-inner"><img src="${product.rawMaterialImage}" alt="Raw Material"></div>
-          <small>Raw Material</small>
-        `;
-      }
-      if (product.finalPowderImage) {
-        // Final powder goes into the second tile
-        imageItems[1].innerHTML = `
-          <div class="product-image-inner"><img src="${product.finalPowderImage}" alt="Final Powder"></div>
-          <small>Final Powder</small>
-        `;
+
+    if (product.singleImageOnly) {
+      // render single tile (replace default)
+      imagesContainer.innerHTML = `
+        <div class="product-image-item single-image-item">
+          <div class="product-image-inner"><img src="${product.image || product.variants[0]?.image || ''}" alt="Product Image"></div>
+          <small>${product.name}</small>
+        </div>
+      `;
+    } else {
+      // populate default tiles with available images
+      const imageItems = imagesContainer.querySelectorAll('.product-image-item');
+      if (imageItems && imageItems.length >= 2) {
+        if (product.rawMaterialImage) {
+          imageItems[0].innerHTML = `
+            <div class="product-image-inner"><img src="${product.rawMaterialImage}" alt="Raw Material"></div>
+            <small>Raw Material</small>
+          `;
+        }
+        if (product.finalPowderImage) {
+          imageItems[1].innerHTML = `
+            <div class="product-image-inner"><img src="${product.finalPowderImage}" alt="Final Powder"></div>
+            <small>Final Powder</small>
+          `;
+        }
       }
     }
   }
@@ -680,13 +702,7 @@ function populateModal(product) {
         }
       });
     });
-    // Auto-select the first variant so image and description appear immediately
-    if (variantItems.length > 0) {
-      // small timeout to ensure DOM updates finished
-      setTimeout(() => {
-        variantItems[0].click();
-      }, 10);
-    }
+    // Do NOT auto-select a variant. Variant details will be shown only when the user clicks a variant.
   }
 }
 
